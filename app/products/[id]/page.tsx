@@ -1,6 +1,9 @@
 import ProductActions from "@/components/productActions";
 import { getProductsId } from "@/services/productservice";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default async function ProductDetails({params,}: {params: Promise<{ id: string }>;}) {
@@ -14,6 +17,9 @@ export default async function ProductDetails({params,}: {params: Promise<{ id: s
 
 
 return (
+    <>
+    <Navbar />
+
   <div className="max-w-7xl mx-auto px-6 py-10">
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-2xl shadow-lg p-8">
@@ -65,30 +71,6 @@ return (
           {product.description}
         </p>
 
-        {/* <div>
-
-          <p className="font-semibold mb-2">
-            Quantity
-          </p>
-
-          <div className="flex items-center gap-4">
-
-            <button className="w-10 h-10 rounded-lg border text-xl">
-              -
-            </button>
-
-            <span className="text-xl font-semibold">
-              1
-            </span>
-
-            <button className="w-10 h-10 rounded-lg border text-xl">
-              +
-            </button>
-
-          </div>
-
-        </div> */}
-
 
         <div className="flex flex-wrap gap-4 pt-4">
 
@@ -105,5 +87,20 @@ return (
     </div>
 
   </div>
+
+  <div className="flex justify-center mt-10">
+      <Link
+        href="/products"
+        className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition"
+      >
+        View More Products
+      </Link>
+    </div>
+
+  <Footer />
+
+
+
+  </>
 );
 }

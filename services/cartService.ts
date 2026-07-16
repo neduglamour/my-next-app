@@ -28,13 +28,32 @@ export function addToCart(product: Product, quantity: number) {
   );
 
   if (existingItem) {
-    existingItem.quantity += 1;
+    existingItem.quantity += quantity;
   } else {
     cart.push({
       ...product,
       quantity: 1,
     });
   }
+  saveCart(cart);
+}
+
+export function updateQuantity(productId: number, quantity: number) {
+  const cart = getCart();
+
+  const item = cart.find((item) => item.id === productId);
+
+  if (!item) return;
+
+  item.quantity = quantity;
+
+  saveCart(cart);
+}
+
+export function removeFromCart(productId: number) {
+  const cart = getCart().filter(
+    (item) => item.id !== productId
+  );
 
   saveCart(cart);
 }
