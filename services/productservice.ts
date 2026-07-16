@@ -16,3 +16,10 @@ import products from "../data/product.json"
 export async function getProducts(): Promise<Product[]> {
   return products as Product[];
 }
+
+export async function getProductsId(id: number): Promise<Product | undefined>  {
+  const products = await getProducts();
+
+  return products.find((product) => product.id === id);
+
+}
