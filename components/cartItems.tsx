@@ -1,21 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { CartItem, getCart, removeFromCart, updateQuantity } from "@/services/cartService";
+import { CartItem } from "@/services/cartService";
+import { useCartStore } from "@/store/cartStore";
 
 type CartItemsProps = {
   cart: CartItem[];
-  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  // setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
 };
 
 export default function CartItems({
-  cart,
-  setCart,
+  cart
 }: CartItemsProps) {
+
+  const updateQuantity = useCartStore((state) => state.updateQuantity);
+
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+
 
   function handleIncrease(item: CartItem) {
     updateQuantity(item.id, item.quantity + 1);
-    setCart(getCart());
+    // setCart(getCart());
   }
 
   function handleDecrease(item: CartItem) {
@@ -24,13 +29,12 @@ export default function CartItems({
     } else {
       updateQuantity(item.id, item.quantity - 1);
     }
-
-    setCart(getCart());
+    // setCart(getCart());
   }
 
   function handleRemove(id: number) {
     removeFromCart(id);
-    setCart(getCart());
+    // setCart(getCart());
   }
 
   if (cart.length === 0) {

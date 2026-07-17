@@ -2,7 +2,8 @@
 
 import {useState } from "react";
 import { Product } from "@/types/product";
-import { addToCart } from "@/services/cartService";
+// import { addToCart } from "@/services/cartService";
+import { useCartStore } from "@/store/cartStore";
 
 type ProductActionsProps = {
   product: Product;
@@ -11,6 +12,7 @@ type ProductActionsProps = {
 export default function ProductActions({product,}: ProductActionsProps) {
     const [quantity, setQuantity] = useState(1);
     const [added, setAdded] = useState(false);
+    const addToCart = useCartStore((state) => state.addToCart)
 
 
   function handleAddToCart() {
