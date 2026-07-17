@@ -32,7 +32,7 @@ export function addToCart(product: Product, quantity: number) {
   } else {
     cart.push({
       ...product,
-      quantity: 1,
+      quantity: quantity,
     });
   }
   saveCart(cart);

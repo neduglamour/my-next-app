@@ -6,14 +6,31 @@ import Footer from "@/components/footer"
 import Link from "next/link";
 import { getProducts } from "@/services/productservice";
 
+type HomeProps = {
+  searchParams: Promise<{
+    search?: string;
+    category?: string;
+    sort?: string;
+  }>;
+};
 
 
-export default function Home() {
+export default async function Home({ searchParams }: HomeProps) {
+    const params = await searchParams;
+
+  const search = params.search ?? "";
+  const category = params.category ?? "all";
+  const sort = params.sort ?? "";
+
   return (
     <>
     <Navbar />
     <Hero />
-    <ProductGrid/>
+    <ProductGrid
+    search={search}
+    category={category}
+    sort={sort}
+    />
 
     <div className="flex justify-center mt-10">
       <Link
