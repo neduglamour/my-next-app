@@ -23,23 +23,16 @@ A modern e-commerce web application built with Next.js, TypeScript, and Tailwind
 
 ## Getting Started
 
-### Clone the repository
-
-```bash
-git clone https://github.com/neduglamour/my-next-app.git
-```
 
 ### Install dependencies
 
-```bash
 npm install
-```
+
 
 ### Start the development server
 
-```bash
 npm run dev
-```
+
 
 Open your browser and visit:
 
@@ -47,12 +40,10 @@ http://localhost:3000
 
 ## Project Structure
 
-- app/ - Application pages and routing
-- components/ - Reusable UI components
-- services/ - API service functions
-- types/ - TypeScript interfaces
-- store/ - Zustand state management
-- public/ - Static assets
+ Application pages and routing
+ Reusable UI components
+ API service functions
+ Zustand state management
 
 ## Author
 
