@@ -40,10 +40,10 @@ http://localhost:3000
 
 ## Project Structure
 
- Application pages and routing
- Reusable UI components
- API service functions
- Zustand state management
+- Application pages and routing
+- Reusable UI components
+- API service functions
+- Zustand state management
 
 ## Author
 
