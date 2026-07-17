@@ -48,3 +48,7 @@ http://localhost:3000
 ## Author
 
 Mercy Edward
+
+## Live Demo
+
+https://my-next-app-ochre-mu.vercel.app/
