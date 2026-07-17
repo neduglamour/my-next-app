@@ -1,20 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { CartItem, getCart } from "@/services/cartService";
+// import { useEffect, useState } from "react";
+import { CartItem } from "@/services/cartService";
 import CartItems from "@/components/cartItems";
 import CartSummary from "@/components/cartSummary";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { useCartStore } from "@/store/cartStore";
 
 
 export default function cartPage() {
 
-    const [cart, setCart] = useState<CartItem[]>([]);
+    const cart = useCartStore((state) => state.cart)
 
-        useEffect(() => {
-        setCart(getCart());
-        }, []);
+        // useEffect(() => {
+        // setCart(getCart());
+        // }, []);
 
     return (
 
@@ -31,7 +32,6 @@ export default function cartPage() {
             <div className="lg:col-span-2">
             <CartItems
                 cart={cart}
-                setCart={setCart}
             />
             </div>
 
