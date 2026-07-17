@@ -11,7 +11,7 @@ A modern e-commerce web application built with Next.js, TypeScript, and Tailwind
 - Product filtering
 - Product listing from Fake Store API
 - Product details page
-- Shopping cart (coming next)
+- Shopping cart
 
 ## Technologies Used
 
